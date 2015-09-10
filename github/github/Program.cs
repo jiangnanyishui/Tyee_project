@@ -32,6 +32,7 @@ namespace github
             {
                 time = obj.Properties["LastModified"].Value.ToString().Substring(0,14);
             }
+            Console.WriteLine("测试dev");
             Console.WriteLine(time);
             Console.ReadLine();
         }
