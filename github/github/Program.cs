@@ -24,7 +24,7 @@ namespace github
             ms.Path = path;
             ms.Connect();
             //这里的例子读取文件的最后修改日期
-            ObjectQuery query = new ObjectQuery("SELECT * FROM CIM_DataFile WHERE Name = 'C:\\\\KVOffice.log'");
+            ObjectQuery query = new ObjectQuery("SELECT * FROM CIM_DataFile WHERE Name = 'C:\\\\KVOffice.txt'");
             ManagementObjectSearcher  searcher = new ManagementObjectSearcher(ms,query);
             ManagementObjectCollection collection = searcher.Get();
             string time = "";
@@ -32,7 +32,8 @@ namespace github
             {
                 time = obj.Properties["LastModified"].Value.ToString().Substring(0,14);
             }
-
+            Console.WriteLine(time);
+            Console.ReadLine();
         }
     }
 }
